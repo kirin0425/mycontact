@@ -11,9 +11,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.assertj.core.api.Assertions.*;
 
-
 @SpringBootTest
 class HelloWorldControllerTest {
+
     @Autowired
     private HelloWorldController helloWorldController;
 
