@@ -19,6 +19,7 @@ class PersonRepositoryTest {
         Person person = new Person();
         person.setName("mori");
         person.setAge(100);
+        person.setBloodType("A");
 
         personRepository.save(person);
         //System.out.println(personRepository.findAll());
@@ -28,5 +29,14 @@ class PersonRepositoryTest {
         assertThat(people.size()).isEqualTo(1);
         assertThat(people.get(0).getName()).isEqualTo("mori");
         assertThat(people.get(0).getAge()).isEqualTo(100);
+        assertThat(people.get(0).getBloodType()).isEqualTo("A");
+    }
+
+    @Test
+    void hashCodeAndEquals() {
+        Person person1 = new Person("mori", 100);
+        Person person2 = new Person("mori", 100);
+
+        System.out.println(person1.equals(person2));
     }
 }
